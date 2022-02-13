@@ -1,9 +1,11 @@
 <template>
   <div class="wrapper">
     <div class="info">
+      <img src="https://c.tenor.com/1J5kkT96dcAAAAAC/up-si-quiero.gif"/>
       <span class="data32">Save the date</span>
       <span class="data20">Mayo 28 2022</span>
       <span class="data12">Laura y Andrés</span>
+      <span class="data32">Espera más noticias muy pronto</span>
     </div>
   </div>
 </template>
