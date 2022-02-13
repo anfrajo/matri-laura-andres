@@ -3,9 +3,9 @@
     <div class="info">
       <img width="100%" src="https://c.tenor.com/1J5kkT96dcAAAAAC/up-si-quiero.gif"/>
       <span class="data32">Save the date</span>
-      <span class="data20">Mayo 28 2022</span>
       <span class="data12">Laura y Andrés</span>
-      <span class="data32">Espera más noticias muy pronto</span>
+      <span class="data20">Mayo 28 de 2022</span>
+      <span class="data26">Espera más noticias muy pronto</span>
     </div>
   </div>
 </template>
@@ -25,11 +25,15 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background-color: #722620;
-  color: #F2BC94;
+  color: #c77644;
+  background-image: url("./assets/flores.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   width: 100%;
   height: 100vh;
   margin: 0;
+  font-family: 'Dancing Script', cursive;
 }
 .wrapper {
   height: 100%;
@@ -44,12 +48,17 @@ export default {
   flex-direction: column;
 }
 .data32 {
-  font-size: 32px;
+  font-size: 42px;
+}
+.data26 {
+  font-size: 26px;
+  margin-top: 30px;
 }
 .data20 {
-  font-size: 20px;
+  font-size: 30px;
 }
 .data12 {
-  font-size: 12px;
+  font-size: 22px;
+  font-weight: bold;
 }
 </style>
