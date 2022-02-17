@@ -4,7 +4,7 @@
       <img width="100%" src="https://c.tenor.com/1J5kkT96dcAAAAAC/up-si-quiero.gif"/>
       <span class="data32">Save the date</span>
       <span class="data12">Laura y Andrés</span>
-      <span class="data20">Mayo 21, 27 o 28 de 2022</span>
+      <span class="data20">Mayo 21 de 2022</span>
       <span class="data26">Espera más noticias muy pronto</span>
     </div>
   </div>
