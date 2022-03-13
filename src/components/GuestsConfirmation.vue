@@ -1,11 +1,11 @@
 <template>
-  <div class="info">
+  <div class="info guest-confirmation">
     <span class="data30">Confirma quienes van a ir:</span>
     <span
       v-for="(guest, index) in guests"
       :key="index"
     >
-      <input type="checkbox" id="checkbox" v-model="guest.confirmed">
+      <input type="checkbox" v-model="guest.confirmed">
       <label class="data26" for="checkbox">{{ guest.name }}</label>
     </span>
     <button class="margin30 button-3" @click="saveInfo">Confirma</button>
@@ -42,4 +42,10 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+.guest-confirmation {
+  input {
+    accent-color: #2ea44f;
+  }
+}
+
 </style>
