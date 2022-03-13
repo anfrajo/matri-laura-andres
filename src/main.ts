@@ -15,7 +15,8 @@ const router = createRouter({
   routes
 })
 const axiosBase = axios.create({
-  baseURL: "http://localhost:3009"
+  //baseURL: "http://localhost:3009"
+  baseURL: "https://back-end-matri-l-c.herokuapp.com"
 })
 const app = createApp(App)
 app.use(VueAxios, axiosBase).use(router).mount('#app')

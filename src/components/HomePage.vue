@@ -71,6 +71,8 @@ export default defineComponent({
           this.state = "save-the-date"
           console.log("Wrong Code")
         })
+    } else {
+      this.state = "save-the-date";
     }
   },
   methods: {
