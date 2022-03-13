@@ -35,11 +35,32 @@
         </svg>
       </span>
     </div>
+    <div class="infoRow">
+      <span class="data30">Contáctanos: </span>
+      <span class="icon" @click="openWhatsapp('3007426090')">
+        <svg viewBox="0 0 24 24">
+          <path class="currentTheme" :d="mdiFaceWomanOutlineIcon" />
+        </svg>
+      </span>
+      &nbsp;&nbsp;&nbsp;
+      <span class="icon" @click="openWhatsapp('3057002493')">
+        <svg viewBox="0 0 24 24">
+          <path class="currentTheme" :d="mdiFaceManIcon" />
+        </svg>
+      </span>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { mdiAccountCheck, mdiAccountTie, mdiCalendarClock, mdiMapOutline } from '@mdi/js'; 
+import {
+  mdiAccountCheck,
+  mdiAccountTie,
+  mdiCalendarClock,
+  mdiFaceMan,
+  mdiFaceWomanOutline,
+  mdiMapOutline
+} from '@mdi/js';
 
 export default {
   name: "HomeInvitation",
@@ -54,8 +75,15 @@ export default {
       mdiAccountCheckIcon: mdiAccountCheck,
       mdiAccountTieIcon: mdiAccountTie,
       mdiCalendarClockIcon: mdiCalendarClock,
+      mdiFaceManIcon: mdiFaceMan,
+      mdiFaceWomanOutlineIcon: mdiFaceWomanOutline,
       mdiMapOutlineIcon: mdiMapOutline
     };
+  },
+  methods: {
+    openWhatsapp(destination: string) {
+      window.open(`https://wa.me/57${destination}`, '_blank');
+    }
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="info">
     <span v-if="sad" class="data30">Sabemos que nos acompañaran de corazón</span>
-    <span v-else class="data30">
+    <span v-else class="data30 width400">
       Confirmaste a {{ countMessage }}
       <br>
       ¡Estamos ansiosos de compartir con {{ names }} ese día!
@@ -50,4 +50,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+.width400 {
+  max-width: 400px;
+}
 </style>
