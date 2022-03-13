@@ -31,7 +31,7 @@ export default defineComponent({
       });
       this.axios.put("/guests", { code: this.guests[0].code, answers })
         .then(() => {
-          this.$emit('go-to', 'home-invitation');
+          this.$emit('go-to', 'confirmation-message');
         })
         .catch(() => {
           console.log("Wrong Response");

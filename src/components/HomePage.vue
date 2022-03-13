@@ -3,10 +3,11 @@
     <div class="info">
       <dress-code v-if="isActive('dress-code')" />
       <home-invitation v-if="isActive('home-invitation')" :name="name" @go-to="goTo"/>
-      <save-the-date v-if="isActive('save-the-date')" @new-code="newCode" />
+      <save-the-date v-if="isActive('save-the-date')" :error="error" @new-code="newCode" />
       <when-is v-if="isActive('when-is')" />
       <where-is v-if="isActive('where-is')" />
       <guests-confirmation v-if="isActive('guest-confirmation')" :guests="guests" @go-to="goTo" />
+      <confirmation-message v-if="isActive('confirmation-message')" :guests="guests" />
       <button v-if="backButtonActive" class="button-3" @click="goTo('home-invitation')">Volver</button>
     </div>
   </div>
@@ -15,6 +16,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
+import ConfirmationMessage from './ConfirmationMessage.vue';
 import DressCode from './DressCode.vue';
 import GuestsConfirmation from './GuestsConfirmation.vue';
 import HomeInvitation from './HomeInvitation.vue';
@@ -33,6 +35,7 @@ export interface IGuest {
 export default defineComponent({
   name: 'HomePage',
   components: {
+    ConfirmationMessage,
     DressCode,
     GuestsConfirmation,
     HomeInvitation,
@@ -45,6 +48,7 @@ export default defineComponent({
       state: "loading" as IState,
       code: "",
       guests: [] as IGuest[],
+      error: false,
       name: ""
     };
   },
@@ -56,8 +60,17 @@ export default defineComponent({
   mounted() {
     document.title = "Matri Laura y Andrés";
     if (this.$route.query.code) {
-      this.code = this.$route.query.code as string;
-
+      this.newCode(this.$route.query.code as string);
+    } else {
+      this.state = "save-the-date";
+    }
+  },
+  methods: {
+    isActive(state: IState): boolean {
+      return this.state === state;
+    },
+    newCode(code: string): void {
+      this.code = code;
       this.axios.get("/whois", { params: { code: this.code } })
         .then(res => {
           this.name = res.data;
@@ -68,20 +81,10 @@ export default defineComponent({
             });
         })
         .catch(() => {
+          this.error = true;
           this.state = "save-the-date"
           console.log("Wrong Code")
         })
-    } else {
-      this.state = "save-the-date";
-    }
-  },
-  methods: {
-    isActive(state: IState): boolean {
-      return this.state === state;
-    },
-    newCode(code: string): void {
-      console.log(code)
-      this.state = "home-invitation";
     },
     goTo(state: IState): void {
       this.state = state;
