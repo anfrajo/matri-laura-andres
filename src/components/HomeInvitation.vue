@@ -1,6 +1,6 @@
 <template>
   <div class="info">
-    <span class="data42">Hola {{name}}</span>
+    <span class="data42">{{name}}</span>
     <span class="data22 ">Llegó el gran día</span>
     <span class="data30">Laura y Andrés tienen el gusto de invitarlos a su boda</span>
     <div class="infoRow margin30">
