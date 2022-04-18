@@ -107,9 +107,9 @@ export default defineComponent({
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #ba8550;
   width: 100%;
   height: 100vh;
+  color: #ba8550;
   margin: 0;
   font-family: 'Dancing Script', cursive;
 }
