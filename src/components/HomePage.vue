@@ -1,8 +1,13 @@
 <template>
   <div class="wrapper">
+    <img
+      class="image-bg"
+      src="../assets/flores.png"
+      alt=""
+    />
     <div class="info">
       <dress-code v-if="isActive('dress-code')" />
-      <home-invitation v-if="isActive('home-invitation')" :name="name" @go-to="goTo"/>
+      <home-invitation v-if="isActive('home-invitation')" :name="name" :individual="individual" @go-to="goTo"/>
       <save-the-date v-if="isActive('save-the-date')" :error="error" @new-code="newCode" />
       <when-is v-if="isActive('when-is')" />
       <where-is v-if="isActive('where-is')" />
@@ -55,6 +60,9 @@ export default defineComponent({
   computed: {
     backButtonActive(): boolean {
       return this.state !== "home-invitation" && this.state !== "loading" && this.state !== "save-the-date";
+    },
+    individual(): boolean {
+      return this.guests.length === 1;
     }
   },
   mounted() {
@@ -99,17 +107,15 @@ export default defineComponent({
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #c77644;
-  background-image: url("../assets/flores.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  color: #ba8550;
   width: 100%;
   height: 100vh;
   margin: 0;
   font-family: 'Dancing Script', cursive;
 }
 .wrapper {
+  overflow: hidden;
+  position: relative;
   height: 100%;
   display: flex;
   align-content: center;
@@ -117,7 +123,17 @@ export default defineComponent({
   align-items: center;
   flex-direction: column;
 }
+.image-bg {
+  opacity: 0.25;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
 .info {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -140,6 +156,9 @@ export default defineComponent({
 }
 .data22 {
   font-size: 22px;
+}
+.padding16 {
+  padding: 0 16px;
 }
 .margin30 {
   margin-top: 30px;

@@ -1,10 +1,15 @@
 <template>
   <div class="info">
-    <span v-if="sad" class="data30">Sabemos que nos acompañaran de corazón</span>
-    <span v-else class="data30 width400">
-      Confirmaste a {{ countMessage }}
+    <span v-if="sad" class="data30">Que triste :(<br>Sabemos que nos acompañaran de corazón</span>
+    <span v-else class="data30 width400 padding16">
+      Confirmaste a <b>{{ countMessage }}</b>
       <br>
       ¡Estamos ansiosos de compartir con {{ names }} ese día!
+      <br>
+      <br>
+      <b>
+      Lluvia de sobres
+      </b>
     </span>
   </div>
 </template>

@@ -1,7 +1,8 @@
 <template>
   <div class="info">
     <span class="data42">Hacienda El Trebolito</span>
-    <span class="data22">Km. 5 via Guaymaral Bogotá (Bogotá DC)</span>
+    <span class="data22 padding16">Km. 5 via Guaymaral-Bogotá</span>
+    <span class="data22">(Bogotá DC)</span>
     <span class="data26">Planea tu viaje con tiempo</span>
     <iframe
       class="map"
